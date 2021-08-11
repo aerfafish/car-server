@@ -7,12 +7,13 @@
   <body>
     <button onclick="sendMessage()">测试</button>
     <script>
-      let socket = new WebSocket("ws://localhost:8080/websocket");
+      let socket = new WebSocket("ws://localhost:8080/websocket/server");
       socket.onerror = err => {
         console.log(err);
       };
       socket.onopen = event => {
         console.log(event);
+        socket.send("hi, server")
       };
       socket.onmessage = mess => {
         console.log(mess);
