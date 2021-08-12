@@ -7,7 +7,7 @@
   <body>
     <button onclick="sendMessage()">测试</button>
     <script>
-      let socket = new WebSocket("ws://localhost:8080/websocket/server");
+      let socket = new WebSocket("ws://localhost:8080/websocket/server?token=123");
       socket.onerror = err => {
         console.log(err);
       };
