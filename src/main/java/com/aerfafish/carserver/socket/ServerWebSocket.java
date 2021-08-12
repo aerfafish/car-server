@@ -1,5 +1,6 @@
 package com.aerfafish.carserver.socket;
 
+import com.aerfafish.carserver.config.ServerConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ import java.util.Map;
  * 1、小车持续连接服务端
  * 2、连接服务端后推送视频
  */
-@ServerEndpoint(value = "/websocket/server") //接受websocket请求路径
+@ServerEndpoint(value = "/websocket/server", configurator = ServerConfigurator.class) //接受websocket请求路径
 @Component  //注册到spring容器中
 public class ServerWebSocket {
 

@@ -1,5 +1,6 @@
 package com.aerfafish.carserver.socket;
 
+import com.aerfafish.carserver.config.ServerConfigurator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -12,7 +13,7 @@ import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-@ServerEndpoint(value = "/websocket/client") //接受websocket请求路径
+@ServerEndpoint(value = "/websocket/client", configurator = ServerConfigurator.class) //接受websocket请求路径
 @Component  //注册到spring容器中
 public class ClientWebSocket {
 
